@@ -12,10 +12,15 @@ import RealmSwift
 
 class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate {
     
+    struct Segues {
+        static let CityDetails = "cityDetails"
+    }
+    
     var cityResult:Results<City>!
     var totalCitiesSelected = 0
     var selectedCities = [String]()
     var storeHelper:StoreHelper!
+    var currentCity: City!
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -27,6 +32,7 @@ class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate
         // Do any additional setup after loading the view, typically from a nib.
         self.configureTableView()
         loadContent()
+        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -36,7 +42,10 @@ class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate
     
     private func configureTableView(){
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
+    
+
     
     
     func loadContent(){
@@ -102,6 +111,18 @@ extension CitiesViewController: UITableViewDataSource {
         return 1
     }
 }
+
+extension CitiesViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentCity = self.cityResult[indexPath.row]
+        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("cityDetails") as! CityTableViewController
+        nextVC.city = self.currentCity
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+}
+
+
 
 extension CitiesViewController: CityTableDelegate {
     func switchTabItem() {
