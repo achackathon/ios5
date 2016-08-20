@@ -13,28 +13,32 @@ import SwiftyJSON
 //  google JSON api + hatena bookmark hotentry
 
 let domain = "https://nomadlist.com/api/v2/"
-
+let imageDomain = "https://nomadlist.com"
 
 final class LivingCostAPI{
     
     
-    class func getCities() -> [City]{
+    class func getCities(callback: ([City]) -> Void){
+        
         LivingCostAPI.getData { (data:JSON?) in
             guard let data = data else { return }
             
             if let jsonResult = data["result"].array {
                 var cities = [City]()
-                
                 for result in jsonResult {
                     let city = City()
                     city.name = result["info"]["city"]["name"].string!
+                    city.country = result["info"]["country"]["name"].string!
+                    city.shortTerm = result["cost"]["shortTerm"]["USD"].double!
+                    city.photoURL = imageDomain + result["media"]["image"]["500"].string!
                     
                     cities.append(city)
                 }
+                callback(cities)
             }
-//            print(data)
-            return cities
+            //            print(data)
         }
+
     }
     
     

@@ -27,6 +27,10 @@ class StoreHelper{
                 for city in cities {
                     realm.create(City.self, value: [
                         "name": city.name,
+                        "shortTerm": city.shortTerm,
+                        "country": city.country,
+                        "isGoingToCompare": city.isGoingToCompare,
+                        "photoURL": city.photoURL,
                         ]
                     )
                 }

@@ -7,18 +7,17 @@
 //
 
 import UIKit
-//import SwiftyJSON
-//import RealmSwift
+import SwiftyJSON
+import RealmSwift
 
 class CitiesViewController: UIViewController {
     
-//    var cityResult:Results<City>!
+    var cityResult:Results<City>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadContent()
-        testListCities()
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +28,30 @@ class CitiesViewController: UIViewController {
     
     func loadContent(){
         //try get local data
-//        cityResult = ReadHelper.getCities()
-//        if cityResult.count > 0 {
-//            return
-//        }
-//        
-//        //get data from API
-//        let cities = LivingCostAPI.getCities()
-//        StoreHelper.storeCities(cities);
+        cityResult = ReadHelper.getCities()
+        if cityResult.count > 0 {
+            testListCities()
+            return
+        }
+        
+        //get data from API
+        LivingCostAPI.getCities { (cities: [City]) in
+            StoreHelper.storeCities(cities);
+        }
+        
     }
     
     
     func testListCities(){
-//        if cityResult != nil {
-//            for city in cityResult{
-//                print (city.name)
-//            }
-//        }
+        cityResult = ReadHelper.getCities()
+        if cityResult != nil {
+            for city in cityResult{
+                print (city.name)
+                print (city.country)
+                print (city.shortTerm)
+                print ("-----")
+            }
+        }
     }
 
 

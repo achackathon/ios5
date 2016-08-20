@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        if ( false ){
+            let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+            let realmURLs = [
+                realmURL,
+                realmURL.URLByAppendingPathExtension("lock"),
+                realmURL.URLByAppendingPathExtension("log_a"),
+                realmURL.URLByAppendingPathExtension("log_b"),
+                realmURL.URLByAppendingPathExtension("note")
+            ]
+            let manager = NSFileManager.defaultManager()
+            for URL in realmURLs {
+                do {
+                    try manager.removeItemAtURL(URL)
+                } catch {
+                    // handle error
+                }
+            }
+
+        }
+        
+        
         return true
     }
 
