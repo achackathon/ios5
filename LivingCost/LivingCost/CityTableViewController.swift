@@ -13,6 +13,39 @@ class CityTableViewController: UITableViewController {
     
     @IBOutlet weak var cityImage: UIImageView!
     
+    
+    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var country: UILabel!
+    @IBOutlet weak var region: UILabel!
+    
+    @IBOutlet weak var weather: UILabel!
+    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var humidity: UILabel!
+    
+    @IBOutlet weak var internetSpeed: UILabel!
+    @IBOutlet weak var freeWifi: UILabel!
+    @IBOutlet weak var airCon: UILabel!
+    
+    
+    @IBOutlet weak var airbnb: UILabel!
+    @IBOutlet weak var hotel: UILabel!
+    
+    
+    @IBOutlet weak var priceForLocals: UILabel!
+    @IBOutlet weak var priceShortTerm: UILabel!
+    @IBOutlet weak var priceLongTerm: UILabel!
+    
+    
+    @IBOutlet weak var coworking: UILabel!
+    
+    
+    @IBOutlet weak var coffee: UILabel!
+    @IBOutlet weak var beer: UILabel!
+    @IBOutlet weak var softDrinks: UILabel!
+    
+    
+    
+    
     var city : City!
     
     func updateUI(){
@@ -22,8 +55,39 @@ class CityTableViewController: UITableViewController {
         
         self.cityImage?.load(urlWithEscaping)
         self.cityImage?.contentMode = .ScaleAspectFill
+        
+        self.cityLabel.text = self.city.name
+        self.country.text = self.city.country
+        self.region.text = self.city.regionName
+        
+        self.internetSpeed.text = "\(self.city.internetSpeed)"
+        self.freeWifi.text = self.city.freeWifiAvailable ? "yes" : "no"
+        
+        self.airbnb.text = "\(formatPrice((self.city.cost?.airbnb)!))"
+        self.priceForLocals.text = "\(formatPrice((self.city.cost?.locals)!))"
+        self.priceShortTerm.text = "\(formatPrice((self.city.cost?.shortTerm)!))"
+        self.priceLongTerm.text = "\(formatPrice((self.city.cost?.longTerm)!))"
+        self.hotel.text = "\(formatPrice((self.city.cost?.hotel)!))"
+        
+        self.beer.text = "\(formatPrice((self.city.cost?.beer)!))"
+        self.coffee.text = "\(formatPrice((self.city.cost?.coffee)!))"
+        self.softDrinks.text = "\(formatPrice((self.city.cost?.softDrink)!))"
+        
+        self.weather.text = "Confortable"
+        self.humidity.text = "\(self.city.weatherHumidity)"
+        self.temperature.text = "\(self.city.weatherTemperature)"
+        
 
         
+    }
+    
+    
+    private func formatPrice(price: Float) -> String{
+        let formatter = NSNumberFormatter()
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        formatter.stringFromNumber(price)
+        return formatter.stringFromNumber(price)!
     }
 
     override func viewDidLoad() {
@@ -68,15 +132,14 @@ class CityTableViewController: UITableViewController {
 //        return 0
 //    }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
-
-        return cell
-    }
-    */
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+//
+//
+//
+//        return cell
+//    }
 
     /*
     // Override to support conditional editing of the table view.
