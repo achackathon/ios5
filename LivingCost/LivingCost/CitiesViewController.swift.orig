@@ -7,17 +7,28 @@
 //
 
 import UIKit
+<<<<<<< HEAD
+import SwiftyJSON
+=======
 //import SwiftyJSON
+>>>>>>> 56adeb6789ab731a79559745de356bf999322a2f
 import RealmSwift
 
 class CitiesViewController: UIViewController {
     
+<<<<<<< HEAD
     var cityResult:Results<City>!
 
+=======
     @IBOutlet weak var tableView: UITableView!
     
     
+//        var cityResult:Results<City>!
+    var cities = [City]()
     
+    
+    
+>>>>>>> 56adeb6789ab731a79559745de356bf999322a2f
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,15 +48,16 @@ class CitiesViewController: UIViewController {
     
     func loadContent(){
         //MOCK DATA
-        //cities = LivingCostAPI.getMockCities()
-        
+        cities = LivingCostAPI.getMockCities()
+        self.tableView.reloadData()
         
         
         
         //try get local data
+<<<<<<< HEAD
         cityResult = ReadHelper.getCities()
         if cityResult.count > 0 {
-            self.tableView.reloadData()
+            testListCities()
             return
         }
         
@@ -54,6 +66,37 @@ class CitiesViewController: UIViewController {
             StoreHelper.storeCities(cities);
         }
         
+=======
+        //        cityResult = ReadHelper.getCities()
+        //        if cityResult.count > 0 {
+        //            return
+        //        }
+        //
+        //        //get data from API
+        //        let cities = LivingCostAPI.getCities()
+        //        StoreHelper.storeCities(cities);
+>>>>>>> 56adeb6789ab731a79559745de356bf999322a2f
+    }
+    
+    
+    func testListCities(){
+<<<<<<< HEAD
+        cityResult = ReadHelper.getCities()
+        if cityResult != nil {
+            for city in cityResult{
+                print (city.name)
+                print (city.country)
+                print (city.shortTerm)
+                print ("-----")
+            }
+        }
+=======
+        //        if cityResult != nil {
+        //            for city in cityResult{
+        //                print (city.name)
+        //            }
+        //        }
+>>>>>>> 56adeb6789ab731a79559745de356bf999322a2f
     }
     
     
@@ -62,14 +105,13 @@ class CitiesViewController: UIViewController {
 
 extension CitiesViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.cityResult.count
+        return self.cities.count
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell()
         
         if let cityCell = tableView.dequeueReusableCellWithIdentifier(CityTableViewCell.CellID, forIndexPath: indexPath) as? CityTableViewCell {
-            let city = cityResult[indexPath.row]
-            cityCell.city = city
+            cityCell.city = cities[indexPath.row]
             cell = cityCell
         }
         

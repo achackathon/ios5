@@ -27,6 +27,7 @@ class CityTableViewCell: UITableViewCell {
         self.cityNameLabel.text = city.name
         self.countryNameLabel.text = city.country
         self.shortTermCostLabel.text = "\(city.shortTerm)"
+//        self.
     }
 
 }

@@ -18,6 +18,7 @@ let imageDomain = "https://nomadlist.com"
 final class LivingCostAPI{
     
     
+<<<<<<< HEAD
     class func getCities(callback: ([City]) -> Void){
         
         LivingCostAPI.getData { (data:JSON?) in
@@ -29,7 +30,7 @@ final class LivingCostAPI{
                     let city = City()
                     city.name = result["info"]["city"]["name"].string!
                     city.country = result["info"]["country"]["name"].string!
-                    city.shortTerm = result["cost"]["shortTerm"]["USD"].float!
+                    city.shortTerm = result["cost"]["shortTerm"]["USD"].double!
                     city.photoURL = imageDomain + result["media"]["image"]["500"].string!
                     
                     cities.append(city)
@@ -40,6 +41,26 @@ final class LivingCostAPI{
         }
 
     }
+=======
+//    class func getCities() -> [City]{
+//        LivingCostAPI.getData { (data:JSON?) in
+//            guard let data = data else { return }
+//            
+//            if let jsonResult = data["result"].array {
+//                var cities = [City]()
+//                
+//                for result in jsonResult {
+//                    let city = City()
+//                    city.name = result["info"]["city"]["name"].string!
+//                    
+//                    cities.append(city)
+//                }
+//            }
+////            print(data)
+//            return cities
+//        }
+//    }
+>>>>>>> 56adeb6789ab731a79559745de356bf999322a2f
     
     
     private class func getData(callback: (JSON?) -> ()) {
