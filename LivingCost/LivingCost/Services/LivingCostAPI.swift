@@ -25,14 +25,36 @@ final class LivingCostAPI{
             
             if let jsonResult = data["result"].array {
                 var cities = [City]()
+                
+                
+                
                 for result in jsonResult {
                     let city = City()
+                    
                     city.name = result["info"]["city"]["name"].string!
                     city.country = result["info"]["country"]["name"].string!
                     city.shortTerm = result["cost"]["shortTerm"]["USD"].float!
                     city.photoURL = imageDomain + result["media"]["image"]["500"].string!
                     
+                    city.regionName = result["info"]["region"]["name"].string!
+                    city.weatherTemperature = result["info"]["weather"]["temperature"]["celsius"].float!
+                    city.weatherHumidity = result["info"]["weather"]["humidity"]["value"].float!
+                    city.internetSpeed = result["info"]["internet"]["speed"]["download"].int!
+                    city.freeWifiAvailable = result["scores"]["free_wifi_available"].int! == 1
+                    city.airconAvailable = result["scores"]["aircon"].int! == 1
+                    
+                    
+                    city.cost = Cost()
+                    city.cost!.airbnb = result["cost"]["airbnb_median"]["USD"].float!
+                    
+                    city.cost!.coffee = result["cost"]["airbnb_median"]["USD"].float!
+                    city.cost!.beer = result["cost"]["airbnb_median"]["USD"].float!
+                    city.cost!.softDrink = result["cost"]["non_alcoholic_drink_in_cafe"]["USD"].float!
+                    
+                    
+                    
                     cities.append(city)
+                    
                 }
                 callback(cities)
             }
