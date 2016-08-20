@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        
-        if ( false ){
+        let deleteDatabase = false
+        if ( deleteDatabase ){
             let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
             let realmURLs = [
                 realmURL,

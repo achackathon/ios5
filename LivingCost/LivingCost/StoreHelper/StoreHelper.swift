@@ -10,10 +10,16 @@ import Foundation
 import Realm
 import RealmSwift
 
+protocol StoreDelegate {
+    func didStoreData()
+}
+
 
 class StoreHelper{
+    
+    var delegate:StoreDelegate!
 
-    class func storeCities(cities: [City]) {
+    func storeCities(cities: [City]) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             autoreleasepool {
@@ -21,9 +27,6 @@ class StoreHelper{
                 let realm = try! Realm()
                 
                 realm.beginWrite()
-//                if cities.count > 0 {
-//                    realm.delete(cities)
-//                }
                 for city in cities {
                     realm.create(City.self, value: [
                         "name": city.name,
@@ -39,6 +42,10 @@ class StoreHelper{
                 // to make this data available to other threads
                 try! realm.commitWrite()
             }
+
+            NSOperationQueue.mainQueue().addOperationWithBlock({
+                self.delegate.didStoreData();
+            })
         }
     }
 
