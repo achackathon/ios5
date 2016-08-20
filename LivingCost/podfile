@@ -11,5 +11,6 @@ pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 pod 'Charts'
 pod 'SDWebImage'
 pod 'RealmSwift'
+pod 'ImageLoader'
 
 end

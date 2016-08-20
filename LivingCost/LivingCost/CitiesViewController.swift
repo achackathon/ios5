@@ -7,13 +7,21 @@
 //
 
 import UIKit
-//import SwiftyJSON
+import SwiftyJSON
 import RealmSwift
 
 class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate {
     
+    struct Segues {
+        static let CityDetails = "cityDetails"
+    }
+    
     var cityResult:Results<City>!
+    var totalCitiesSelected = 0
+    var selectedCities = [String]()
     var storeHelper:StoreHelper!
+    var currentCity: City!
+
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,6 +32,7 @@ class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate
         // Do any additional setup after loading the view, typically from a nib.
         self.configureTableView()
         loadContent()
+        self.tabBarController?.tabBar.tintColor = UIColor.whiteColor()
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,7 +42,10 @@ class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate
     
     private func configureTableView(){
         self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
+    
+
     
     
     func loadContent(){
@@ -90,12 +102,49 @@ extension CitiesViewController: UITableViewDataSource {
             let city = cityResult[indexPath.row]
             cityCell.city = city
             cell = cityCell
+            cityCell.delegate = self
         }
         
         return cell
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+}
+
+extension CitiesViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentCity = self.cityResult[indexPath.row]
+        let nextVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("cityDetails") as! CityTableViewController
+        nextVC.city = self.currentCity
+        self.navigationController?.pushViewController(nextVC, animated: true)
+    }
+    
+}
+
+
+
+extension CitiesViewController: CityTableDelegate {
+    func switchTabItem() {
+        if self.totalCitiesSelected > 3 {
+            if  let arrayOfTabBarItems =  self.tabBarController!.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[1] as? UITabBarItem {
+                tabBarItem.enabled = false
+            }
+        } else {
+            if  let arrayOfTabBarItems = self.tabBarController!.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[1] as? UITabBarItem {
+                tabBarItem.enabled = true
+            }
+        }
+    }
+    func checkCity(state: Int, name: String, cityCell: CityTableViewCell) {
+        if (state == 2) {
+            self.totalCitiesSelected += 1
+            self.selectedCities.append(cityCell.city.name)
+        } else {
+            self.totalCitiesSelected -= 1
+            self.selectedCities.removeLast()
+        }
+        switchTabItem()
     }
 }
 
