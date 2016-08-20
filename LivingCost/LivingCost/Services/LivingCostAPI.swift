@@ -56,5 +56,19 @@ final class LivingCostAPI{
         }
     }
     
+    static func getMockCities() -> [City]{
+        var cities = [City]()
+        
+        for _ in 0..<10 {
+            let city = City()
+            city.name = "Bangkok"
+            city.country = "Thailand"
+            city.shortTerm = 123.12
+            city.isGoingToCompare = false
+            cities.append(city)
+        }
+        
+        return cities
+    }
 }
 

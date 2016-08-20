@@ -13,7 +13,7 @@ import RealmSwift
 final class City: Object {
     dynamic var name = ""
     dynamic var country = ""
-    dynamic var shortTerm = 0.0
+    dynamic var shortTerm:Float = 0.0
     dynamic var isGoingToCompare = false
     dynamic var photoURL = ""
 
