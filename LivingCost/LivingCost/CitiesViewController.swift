@@ -13,6 +13,10 @@ import RealmSwift
 class CitiesViewController: UIViewController {
     
     var cityResult:Results<City>!
+    
+    var totalCitiesSelected = 0
+    
+    var selectedCities = [String]()
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -71,12 +75,37 @@ extension CitiesViewController: UITableViewDataSource {
             let city = cityResult[indexPath.row]
             cityCell.city = city
             cell = cityCell
+            cityCell.delegate = self
         }
         
         return cell
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
+    }
+}
+
+extension CitiesViewController: CityTableDelegate {
+    func switchTabItem() {
+        if self.totalCitiesSelected > 3 {
+            if  let arrayOfTabBarItems =  self.tabBarController!.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[1] as? UITabBarItem {
+                tabBarItem.enabled = false
+            }
+        } else {
+            if  let arrayOfTabBarItems = self.tabBarController!.tabBar.items as! AnyObject as? NSArray,tabBarItem = arrayOfTabBarItems[1] as? UITabBarItem {
+                tabBarItem.enabled = true
+            }
+        }
+    }
+    func checkCity(state: Int, name: String, cityCell: CityTableViewCell) {
+        if (state == 2) {
+            self.totalCitiesSelected += 1
+            self.selectedCities.append(cityCell.city.name)
+        } else {
+            self.totalCitiesSelected -= 1
+            self.selectedCities.removeLast()
+        }
+        switchTabItem()
     }
 }
 

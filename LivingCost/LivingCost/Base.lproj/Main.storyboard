@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6V-RC-1WI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="K6V-RC-1WI">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" id="47J-vf-CTm">
@@ -33,7 +33,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bangkok-thailand-500px" translatesAutoresizingMaskIntoConstraints="NO" id="sqQ-TB-ivH">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sTe-xi-W4B">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuM-LN-4BN">
@@ -42,14 +42,22 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIb-EY-z8N">
-                                                                <rect key="frame" x="558" y="12" width="22" height="22"/>
-                                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <state key="normal">
-                                                                    <color key="titleShadowColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                                                </state>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SpC-pK-0O4">
+                                                                <rect key="frame" x="560" y="8" width="32" height="32"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="32" id="9LR-PB-8x8"/>
+                                                                    <constraint firstAttribute="height" constant="32" id="NmQ-aP-Gbq"/>
+                                                                </constraints>
+                                                                <state key="normal" image="circle-outline-32"/>
+                                                                <connections>
+                                                                    <action selector="selectCity:" destination="7SA-Q6-5o4" eventType="touchUpInside" id="rYs-An-UWn"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="trailing" secondItem="SpC-pK-0O4" secondAttribute="trailing" constant="8" id="0MN-P0-eqZ"/>
+                                                            <constraint firstItem="SpC-pK-0O4" firstAttribute="top" secondItem="UiI-DU-Bra" secondAttribute="top" constant="8" id="wcD-bi-ml3"/>
+                                                        </constraints>
                                                     </view>
                                                     <blurEffect style="light"/>
                                                 </visualEffectView>
@@ -76,29 +84,32 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GD2-Yy-bd3" firstAttribute="centerX" secondItem="sqQ-TB-ivH" secondAttribute="centerX" id="1BL-3o-Smq"/>
+                                                <constraint firstItem="sTe-xi-W4B" firstAttribute="top" secondItem="tTg-Jq-mm7" secondAttribute="top" id="1Gc-db-RsT"/>
+                                                <constraint firstItem="GD2-Yy-bd3" firstAttribute="centerX" secondItem="UiI-DU-Bra" secondAttribute="centerX" id="55A-Ie-sB5"/>
                                                 <constraint firstItem="JuM-LN-4BN" firstAttribute="leading" secondItem="tTg-Jq-mm7" secondAttribute="leading" id="5Iu-RB-qGF"/>
-                                                <constraint firstAttribute="bottom" secondItem="sqQ-TB-ivH" secondAttribute="bottom" id="5Q3-UK-FWT"/>
-                                                <constraint firstAttribute="trailing" secondItem="sqQ-TB-ivH" secondAttribute="trailing" id="Hit-nS-sX2"/>
+                                                <constraint firstItem="UiI-DU-Bra" firstAttribute="top" secondItem="GD2-Yy-bd3" secondAttribute="bottom" constant="-47" id="5Qw-zL-lQi"/>
+                                                <constraint firstItem="FkH-NF-Bdm" firstAttribute="top" secondItem="GD2-Yy-bd3" secondAttribute="bottom" constant="4" id="BgH-xB-FF0"/>
+                                                <constraint firstItem="dog-c3-kWs" firstAttribute="top" secondItem="FkH-NF-Bdm" secondAttribute="bottom" constant="12" id="Bxw-75-BBy"/>
+                                                <constraint firstItem="dog-c3-kWs" firstAttribute="centerX" secondItem="UiI-DU-Bra" secondAttribute="centerX" id="D7P-yQ-21H"/>
+                                                <constraint firstItem="FkH-NF-Bdm" firstAttribute="centerX" secondItem="UiI-DU-Bra" secondAttribute="centerX" id="Myn-wb-vWE"/>
                                                 <constraint firstAttribute="bottom" secondItem="JuM-LN-4BN" secondAttribute="bottom" id="Nd0-qm-9MI"/>
                                                 <constraint firstItem="FkH-NF-Bdm" firstAttribute="top" secondItem="GD2-Yy-bd3" secondAttribute="bottom" constant="4" id="XyD-yW-Utt"/>
+                                                <constraint firstAttribute="bottom" secondItem="sTe-xi-W4B" secondAttribute="bottom" id="YgP-Bo-inL"/>
                                                 <constraint firstItem="dog-c3-kWs" firstAttribute="top" secondItem="FkH-NF-Bdm" secondAttribute="bottom" constant="12" id="bsU-z6-y0M"/>
                                                 <constraint firstAttribute="bottom" secondItem="JuM-LN-4BN" secondAttribute="bottom" id="bx7-yI-nP2"/>
-                                                <constraint firstItem="sqQ-TB-ivH" firstAttribute="leading" secondItem="tTg-Jq-mm7" secondAttribute="leading" id="f7T-us-x7U"/>
                                                 <constraint firstItem="JuM-LN-4BN" firstAttribute="leading" secondItem="tTg-Jq-mm7" secondAttribute="leading" id="ilA-sR-DgJ"/>
-                                                <constraint firstItem="sqQ-TB-ivH" firstAttribute="top" secondItem="tTg-Jq-mm7" secondAttribute="top" id="jCI-hZ-d0U"/>
                                                 <constraint firstItem="JuM-LN-4BN" firstAttribute="top" secondItem="tTg-Jq-mm7" secondAttribute="top" id="nrn-hm-W7G"/>
-                                                <constraint firstItem="dog-c3-kWs" firstAttribute="centerX" secondItem="sqQ-TB-ivH" secondAttribute="centerX" id="p1p-6L-9su"/>
                                                 <constraint firstItem="GD2-Yy-bd3" firstAttribute="top" secondItem="tTg-Jq-mm7" secondAttribute="top" constant="10" id="pdi-OF-1I1"/>
-                                                <constraint firstItem="FkH-NF-Bdm" firstAttribute="centerX" secondItem="sqQ-TB-ivH" secondAttribute="centerX" id="tDD-jG-us3"/>
+                                                <constraint firstAttribute="trailing" secondItem="sTe-xi-W4B" secondAttribute="trailing" id="syo-jY-KxE"/>
                                                 <constraint firstItem="JuM-LN-4BN" firstAttribute="top" secondItem="tTg-Jq-mm7" secondAttribute="top" id="us9-21-ZCN"/>
                                                 <constraint firstAttribute="trailing" secondItem="JuM-LN-4BN" secondAttribute="trailing" id="vRb-Sv-iRi"/>
+                                                <constraint firstItem="sTe-xi-W4B" firstAttribute="leading" secondItem="tTg-Jq-mm7" secondAttribute="leading" id="xf0-M3-FvF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cityImageView" destination="sTe-xi-W4B" id="Z3K-Th-6hZ"/>
                                             <outlet property="cityNameLabel" destination="GD2-Yy-bd3" id="9m1-ld-G1c"/>
                                             <outlet property="countryNameLabel" destination="FkH-NF-Bdm" id="lcA-OK-pXF"/>
-                                            <outlet property="selectButton" destination="SIb-EY-z8N" id="6D1-bx-LS0"/>
                                             <outlet property="shortTermCostLabel" destination="dog-c3-kWs" id="7by-cQ-SjM"/>
                                         </connections>
                                     </tableViewCell>
@@ -122,7 +133,7 @@
             </objects>
             <point key="canvasLocation" x="1562" y="-320"/>
         </scene>
-        <!--Second-->
+        <!--Compare-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
@@ -156,7 +167,7 @@
                             <constraint firstAttribute="centerY" secondItem="zEq-FU-wV5" secondAttribute="centerY" id="qzY-Ky-pLD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Compare" image="second" id="cPa-gy-q4n"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -181,11 +192,11 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--First-->
+        <!--Cities-->
         <scene sceneID="ZBX-R2-W9i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P50-fk-vbq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Cities" image="first" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="szz-XL-mbM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -202,7 +213,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bangkok-thailand-500px" width="500" height="400"/>
+        <image name="circle-outline-32" width="32" height="32"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>

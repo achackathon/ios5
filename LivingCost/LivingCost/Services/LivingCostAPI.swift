@@ -12,11 +12,11 @@ import SwiftyJSON
 
 //  google JSON api + hatena bookmark hotentry
 
-let domain = "https://nomadlist.com/api/v2/"
-let imageDomain = "https://nomadlist.com"
 
 final class LivingCostAPI{
     
+    static let domain = "https://nomadlist.com/api/v2/"
+    static let imageDomain = "https://nomadlist.com"
     
     class func getCities(callback: ([City]) -> Void){
         

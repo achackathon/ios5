@@ -6,53 +6,48 @@
 	<dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Charts.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImageLoader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-LivingCost.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Realm.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>RealmSwift.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SDWebImage.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2F9B2978CCDB146C150D1CB706288C31</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>60DB08F0D2984026168AAADD5E648359</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>6F6AF4FCF83F252674E400151ECEBD0C</key>
+		<key>1B9993E0C9867193887CC303D1E3A6B7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +57,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>ABD743F9E09B678475C4E035AAB0DEAA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD53FFE97D4F26A2958E3F6E5CFCD830</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F366690933A00E8BC2BDB6A667620284</key>
+		<key>D57B444294B0E21E25C054D1A28EAE8F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FEBEB3C77BD742CE7A096602A3894B18</key>
+		<key>EE41EF0BECA763EA5823D41E68185D27</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE2B91C603514CCF7B181B53D91EA8BF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
