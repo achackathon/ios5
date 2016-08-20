@@ -65,10 +65,6 @@ class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate
     
     
     //MARK: UISearchBarDelegate
-    
-    
- //   - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         cityResult = ReadHelper.getCitiesWithFilter(searchText)
         
