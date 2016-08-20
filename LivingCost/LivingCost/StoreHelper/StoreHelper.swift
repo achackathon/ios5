@@ -27,9 +27,6 @@ class StoreHelper{
                 let realm = try! Realm()
                 
                 realm.beginWrite()
-//                if cities.count > 0 {
-//                    realm.delete(cities)
-//                }
                 for city in cities {
                     realm.create(City.self, value: [
                         "name": city.name,
@@ -45,16 +42,10 @@ class StoreHelper{
                 // to make this data available to other threads
                 try! realm.commitWrite()
             }
-            
-            
-            
+
             NSOperationQueue.mainQueue().addOperationWithBlock({
                 self.delegate.didStoreData();
             })
-            
-            
-            
-            
         }
     }
 
