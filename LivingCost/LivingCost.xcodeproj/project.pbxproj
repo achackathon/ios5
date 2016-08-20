@@ -65,8 +65,9 @@
 		A15D48C41D68896F00E469BF /* LivingCost */ = {
 			isa = PBXGroup;
 			children = (
-				A15D48DC1D688F3500E469BF /* serv */,
-				A15D48DB1D688F2D00E469BF /* Models */,
+				A15D48DD1D68931100E469BF /* Models */,
+				A15D48DE1D68931100E469BF /* Services */,
+				A15D48DF1D68931100E469BF /* ViewControllers */,
 				A15D48C51D68896F00E469BF /* AppDelegate.swift */,
 				A15D48D91D688BDB00E469BF /* podfile */,
 				A15D48C71D68896F00E469BF /* FirstViewController.swift */,
@@ -79,18 +80,25 @@
 			path = LivingCost;
 			sourceTree = "<group>";
 		};
-		A15D48DB1D688F2D00E469BF /* Models */ = {
+		A15D48DD1D68931100E469BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		A15D48DC1D688F3500E469BF /* serv */ = {
+		A15D48DE1D68931100E469BF /* Services */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = serv;
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A15D48DF1D68931100E469BF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B952D002E11A8F9F7C6BF811 /* Pods */ = {
