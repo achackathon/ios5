@@ -17,8 +17,12 @@ class ReadHelper {
         let realm = try! Realm()
         
         // Query Realm for all dogs less than 2 years old
-        let cities = realm.objects(City.self).sorted("name")//.filter("name beginsWith ..")
+        let cities = realm.objects(City.self).sorted("name")
         
         return cities
+    }
+    
+    class func getCitiesWithFilter(textFilter: String) -> Results<City>{
+        return getCities().filter("name beginsWith '\(textFilter)'")
     }
 }

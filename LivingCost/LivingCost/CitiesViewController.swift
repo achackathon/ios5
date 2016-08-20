@@ -10,9 +10,10 @@ import UIKit
 //import SwiftyJSON
 import RealmSwift
 
-class CitiesViewController: UIViewController {
+class CitiesViewController: UIViewController, StoreDelegate, UISearchBarDelegate {
     
     var cityResult:Results<City>!
+    var storeHelper:StoreHelper!
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,8 +39,8 @@ class CitiesViewController: UIViewController {
     func loadContent(){
         //MOCK DATA
         //cities = LivingCostAPI.getMockCities()
-        
-        
+        storeHelper = StoreHelper()
+        storeHelper.delegate = self
         
         
         //try get local data
@@ -51,9 +52,27 @@ class CitiesViewController: UIViewController {
         
         //get data from API
         LivingCostAPI.getCities { (cities: [City]) in
-            StoreHelper.storeCities(cities);
+            self.storeHelper.storeCities(cities);
         }
         
+    }
+    
+    
+    func didStoreData() {
+        cityResult = ReadHelper.getCities()
+        self.tableView.reloadData()
+    }
+    
+    
+    //MARK: UISearchBarDelegate
+    
+    
+ //   - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        cityResult = ReadHelper.getCitiesWithFilter(searchText)
+        
+        self.tableView.reloadData()
     }
     
     
