@@ -18,24 +18,24 @@ let domain = "https://nomadlist.com/api/v2/"
 final class LivingCostAPI{
     
     
-    class func getCities() -> [City]{
-        LivingCostAPI.getData { (data:JSON?) in
-            guard let data = data else { return }
-            
-            if let jsonResult = data["result"].array {
-                var cities = [City]()
-                
-                for result in jsonResult {
-                    let city = City()
-                    city.name = result["info"]["city"]["name"].string!
-                    
-                    cities.append(city)
-                }
-            }
-//            print(data)
-            return cities
-        }
-    }
+//    class func getCities() -> [City]{
+//        LivingCostAPI.getData { (data:JSON?) in
+//            guard let data = data else { return }
+//            
+//            if let jsonResult = data["result"].array {
+//                var cities = [City]()
+//                
+//                for result in jsonResult {
+//                    let city = City()
+//                    city.name = result["info"]["city"]["name"].string!
+//                    
+//                    cities.append(city)
+//                }
+//            }
+////            print(data)
+//            return cities
+//        }
+//    }
     
     
     private class func getData(callback: (JSON?) -> ()) {
@@ -52,5 +52,19 @@ final class LivingCostAPI{
         }
     }
     
+    static func getMockCities() -> [City]{
+        var cities = [City]()
+        
+        for _ in 0..<10 {
+            let city = City()
+            city.name = "Bangkok"
+            city.country = "Thailand"
+            city.shortTerm = 123.12
+            city.isGoingToCompare = false
+            cities.append(city)
+        }
+        
+        return cities
+    }
 }
 

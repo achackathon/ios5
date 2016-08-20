@@ -12,8 +12,15 @@ import RealmSwift
 
 final class City: Object {
     dynamic var name = ""
-    dynamic var shortTerm = 
+    dynamic var country = ""
+    dynamic var shortTerm:Float = 0.0
     dynamic var isGoingToCompare = false
     
-
+//    init(name: String, country: String, shortTerm: Float, isGoingToCompare: Bool) {
+//        self.name = name
+//        self.country = country
+//        self.shortTerm = shortTerm
+//        self.isGoingToCompare = isGoingToCompare
+//    }
+    
 }
