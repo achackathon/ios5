@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A15D48C61D68896F00E469BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48C51D68896F00E469BF /* AppDelegate.swift */; };
-		A15D48C81D68896F00E469BF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48C71D68896F00E469BF /* FirstViewController.swift */; };
+		A15D48C81D68896F00E469BF /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48C71D68896F00E469BF /* CitiesViewController.swift */; };
 		A15D48CA1D68896F00E469BF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48C91D68896F00E469BF /* SecondViewController.swift */; };
 		A15D48CD1D68896F00E469BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15D48CB1D68896F00E469BF /* Main.storyboard */; };
 		A15D48CF1D68896F00E469BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A15D48CE1D68896F00E469BF /* Assets.xcassets */; };
 		A15D48D21D68896F00E469BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15D48D01D68896F00E469BF /* LaunchScreen.storyboard */; };
 		A15D48DA1D688BDB00E469BF /* podfile in Resources */ = {isa = PBXBuildFile; fileRef = A15D48D91D688BDB00E469BF /* podfile */; };
+		A15D48E11D68945000E469BF /* LivingCostAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48E01D68945000E469BF /* LivingCostAPI.swift */; };
+		A15D48E31D689A9C00E469BF /* CityRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48E21D689A9C00E469BF /* CityRealm.swift */; };
+		A15D48E61D689FB400E469BF /* StoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48E51D689FB400E469BF /* StoreHelper.swift */; };
+		A15D48E81D68A79400E469BF /* ReadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48E71D68A79400E469BF /* ReadHelper.swift */; };
 		DE56D34A39E413C7637381D0 /* Pods_LivingCost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3929A321B6BEB8ABF41F038D /* Pods_LivingCost.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,13 +26,17 @@
 		3929A321B6BEB8ABF41F038D /* Pods_LivingCost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LivingCost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15D48C21D68896F00E469BF /* LivingCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LivingCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A15D48C51D68896F00E469BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A15D48C71D68896F00E469BF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		A15D48C91D68896F00E469BF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A15D48C71D68896F00E469BF /* CitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CitiesViewController.swift; path = ../CitiesViewController.swift; sourceTree = "<group>"; };
+		A15D48C91D68896F00E469BF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SecondViewController.swift; path = ../SecondViewController.swift; sourceTree = "<group>"; };
 		A15D48CC1D68896F00E469BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A15D48CE1D68896F00E469BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A15D48D11D68896F00E469BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A15D48D31D68896F00E469BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A15D48D91D688BDB00E469BF /* podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = podfile; sourceTree = SOURCE_ROOT; };
+		A15D48E01D68945000E469BF /* LivingCostAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivingCostAPI.swift; sourceTree = "<group>"; };
+		A15D48E21D689A9C00E469BF /* CityRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityRealm.swift; sourceTree = "<group>"; };
+		A15D48E51D689FB400E469BF /* StoreHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreHelper.swift; path = StoreHelper/StoreHelper.swift; sourceTree = "<group>"; };
+		A15D48E71D68A79400E469BF /* ReadHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReadHelper.swift; path = Helpers/ReadHelper.swift; sourceTree = "<group>"; };
 		D3189140379EF1CBA218DAB5 /* Pods-LivingCost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingCost.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LivingCost/Pods-LivingCost.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,13 +73,12 @@
 		A15D48C41D68896F00E469BF /* LivingCost */ = {
 			isa = PBXGroup;
 			children = (
+				A15D48E41D689F9300E469BF /* Helpers */,
 				A15D48DD1D68931100E469BF /* Models */,
 				A15D48DE1D68931100E469BF /* Services */,
 				A15D48DF1D68931100E469BF /* ViewControllers */,
 				A15D48C51D68896F00E469BF /* AppDelegate.swift */,
 				A15D48D91D688BDB00E469BF /* podfile */,
-				A15D48C71D68896F00E469BF /* FirstViewController.swift */,
-				A15D48C91D68896F00E469BF /* SecondViewController.swift */,
 				A15D48CB1D68896F00E469BF /* Main.storyboard */,
 				A15D48CE1D68896F00E469BF /* Assets.xcassets */,
 				A15D48D01D68896F00E469BF /* LaunchScreen.storyboard */,
@@ -83,6 +90,7 @@
 		A15D48DD1D68931100E469BF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A15D48E21D689A9C00E469BF /* CityRealm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -90,6 +98,7 @@
 		A15D48DE1D68931100E469BF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A15D48E01D68945000E469BF /* LivingCostAPI.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -97,8 +106,19 @@
 		A15D48DF1D68931100E469BF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A15D48C91D68896F00E469BF /* SecondViewController.swift */,
+				A15D48C71D68896F00E469BF /* CitiesViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A15D48E41D689F9300E469BF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A15D48E51D689FB400E469BF /* StoreHelper.swift */,
+				A15D48E71D68A79400E469BF /* ReadHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		B952D002E11A8F9F7C6BF811 /* Pods */ = {
@@ -243,7 +263,11 @@
 			files = (
 				A15D48CA1D68896F00E469BF /* SecondViewController.swift in Sources */,
 				A15D48C61D68896F00E469BF /* AppDelegate.swift in Sources */,
-				A15D48C81D68896F00E469BF /* FirstViewController.swift in Sources */,
+				A15D48E31D689A9C00E469BF /* CityRealm.swift in Sources */,
+				A15D48E61D689FB400E469BF /* StoreHelper.swift in Sources */,
+				A15D48E11D68945000E469BF /* LivingCostAPI.swift in Sources */,
+				A15D48C81D68896F00E469BF /* CitiesViewController.swift in Sources */,
+				A15D48E81D68A79400E469BF /* ReadHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
