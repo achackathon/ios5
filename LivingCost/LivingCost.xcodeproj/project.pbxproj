@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0EAC56A81D68E64F0045E159 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC56A71D68E64F0045E159 /* CityTableViewController.swift */; };
 		0EAC56AB1D68F3270045E159 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EAC56A91D68F3270045E159 /* Main.storyboard */; };
+		0EAC56AD1D68F7090045E159 /* CompareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EAC56AC1D68F7090045E159 /* CompareViewController.swift */; };
 		0EC32C021D68B16800DE9616 /* CitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC32C011D68B16800DE9616 /* CitiesViewController.swift */; };
 		0EC32C041D68B36900DE9616 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EC32C031D68B36900DE9616 /* CityTableViewCell.swift */; };
 		A15D48C61D68896F00E469BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D48C51D68896F00E469BF /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		0EAC56A71D68E64F0045E159 /* CityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 		0EAC56AA1D68F3270045E159 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0EAC56AC1D68F7090045E159 /* CompareViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompareViewController.swift; path = LivingCost/CompareViewController.swift; sourceTree = SOURCE_ROOT; };
 		0EC32C011D68B16800DE9616 /* CitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CitiesViewController.swift; path = LivingCost/CitiesViewController.swift; sourceTree = SOURCE_ROOT; };
 		0EC32C031D68B36900DE9616 /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CityTableViewCell.swift; path = LivingCost/CityTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		2B02843F3C1AD03DE979A783 /* Pods-LivingCost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LivingCost.release.xcconfig"; path = "Pods/Target Support Files/Pods-LivingCost/Pods-LivingCost.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			children = (
 				0EC32C011D68B16800DE9616 /* CitiesViewController.swift */,
 				0EC32C031D68B36900DE9616 /* CityTableViewCell.swift */,
+				0EAC56AC1D68F7090045E159 /* CompareViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				A15D48E31D689A9C00E469BF /* CityRealm.swift in Sources */,
 				A15D48E61D689FB400E469BF /* StoreHelper.swift in Sources */,
 				A15D48E11D68945000E469BF /* LivingCostAPI.swift in Sources */,
+				0EAC56AD1D68F7090045E159 /* CompareViewController.swift in Sources */,
 				0EC32C021D68B16800DE9616 /* CitiesViewController.swift in Sources */,
 				A15D48E81D68A79400E469BF /* ReadHelper.swift in Sources */,
 			);

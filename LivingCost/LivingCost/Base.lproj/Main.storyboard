@@ -115,6 +115,7 @@
                                             <outlet property="cityNameLabel" destination="GD2-Yy-bd3" id="9m1-ld-G1c"/>
                                             <outlet property="countryNameLabel" destination="FkH-NF-Bdm" id="lcA-OK-pXF"/>
                                             <outlet property="shortTermCostLabel" destination="dog-c3-kWs" id="7by-cQ-SjM"/>
+                                            <outlet property="toggleButton" destination="SpC-pK-0O4" id="lpD-94-ghn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -629,7 +630,7 @@
         <!--Compare-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" sceneMemberID="viewController">
+                <viewController id="8rJ-Kc-sve" customClass="CompareViewController" customModule="LivingCost" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L7p-HK-0SC"/>
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
@@ -637,11 +638,26 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TZR-EJ-SZj" customClass="BarChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="TZR-EJ-SZj" secondAttribute="trailing" id="7yz-pY-Nq6"/>
+                            <constraint firstItem="TZR-EJ-SZj" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="G7M-RO-pbx"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="TZR-EJ-SZj" secondAttribute="bottom" id="dCd-sY-6jo"/>
+                            <constraint firstItem="TZR-EJ-SZj" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="kNT-Ea-XpZ"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Compare" image="line-chart-32" id="cPa-gy-q4n"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <connections>
+                        <outlet property="barChartView" destination="TZR-EJ-SZj" id="rT5-PY-tuc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

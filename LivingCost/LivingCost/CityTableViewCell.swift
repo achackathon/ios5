@@ -8,6 +8,7 @@
 
 import UIKit
 import ImageLoader
+import RealmSwift
 
 protocol CityTableDelegate: class{
     func checkCity(state: Int, name: String, cityCell: CityTableViewCell)
@@ -20,6 +21,7 @@ class CityTableViewCell: UITableViewCell {
     weak var delegate:CityTableDelegate?
     
     @IBOutlet weak var cityImageView: UIImageView!
+    @IBOutlet weak var toggleButton: UIButton!
     
     var toggleState = 1
     
@@ -32,9 +34,9 @@ class CityTableViewCell: UITableViewCell {
             toggleState = 1
             sender.setImage(UIImage(named: "circle-outline-32"),forState:UIControlState.Normal)
         }
+
         self.delegate?.checkCity(toggleState, name: city.name, cityCell: self)
     }
-    
     
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var countryNameLabel: UILabel!
@@ -63,7 +65,11 @@ class CityTableViewCell: UITableViewCell {
         self.cityNameLabel.text = city.name
         self.countryNameLabel.text = city.country
         self.shortTermCostLabel.text = "\(self.formatPrice(city.shortTerm))"
-        
+        if self.city.isGoingToCompare {
+            self.toggleButton.setImage(UIImage(named: "ok-32"),forState:UIControlState.Normal)
+        } else {
+            self.toggleButton.setImage(UIImage(named: "circle-outline-32"),forState:UIControlState.Normal)
+        }
     }
 
 }

@@ -137,6 +137,16 @@ extension CitiesViewController: CityTableDelegate {
         }
     }
     func checkCity(state: Int, name: String, cityCell: CityTableViewCell) {
+        //cityCell.city.isGoingToCompare = !cityCell.city.isGoingToCompare
+        
+        //dispatch_async(dispatch_queue_create("background", nil)) {
+            let realm = try! Realm()
+            //let theDog = realm.objects(Dog.self).filter("age == 1").first
+            try! realm.write {
+                cityCell.city.isGoingToCompare = !cityCell.city.isGoingToCompare
+            }
+        //}
+        
         if (state == 2) {
             self.totalCitiesSelected += 1
             self.selectedCities.append(cityCell.city.name)
