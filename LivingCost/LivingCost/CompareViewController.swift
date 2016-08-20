@@ -20,12 +20,15 @@ class CompareViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         detailNames = ["Hotel", "Living", "Coworking space", "Coffee", "Beer"]
-        let values = [20.0, 4.0, 6.0, 3.0, 12.0]
+        let values = [150.0, 300.0, 50.0, 3.0, 5.0]
         setChart(detailNames, values: values)
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
         barChartView.noDataText = "You need to provide data for the chart."
+        barChartView.xAxis.labelPosition = .Bottom
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
+
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
@@ -33,7 +36,9 @@ class CompareViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Cities")
+        
+        chartDataSet.colors = ChartColorTemplates.colorful()
         let chartData = BarChartData(xVals: detailNames, dataSet: chartDataSet)
         barChartView.data = chartData
         

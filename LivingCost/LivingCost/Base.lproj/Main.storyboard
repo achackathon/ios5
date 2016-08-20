@@ -620,7 +620,25 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="airCon" destination="4CD-av-h0X" id="XdF-Ub-AbZ"/>
+                        <outlet property="airbnb" destination="DFe-45-btL" id="vaZ-r6-1kX"/>
+                        <outlet property="beer" destination="iiR-V8-vfe" id="r1H-AT-Xtb"/>
                         <outlet property="cityImage" destination="UP9-Go-BMT" id="aJI-dL-x7s"/>
+                        <outlet property="cityLabel" destination="vrZ-t8-CRk" id="1h7-ZN-jhb"/>
+                        <outlet property="coffee" destination="ozh-jg-PTS" id="7N9-HC-5qX"/>
+                        <outlet property="country" destination="aBb-c8-TDW" id="n1h-rO-eyA"/>
+                        <outlet property="coworking" destination="vXf-jO-5NY" id="8dX-Zb-ecy"/>
+                        <outlet property="freeWifi" destination="xff-ih-D0M" id="8B5-C3-0UE"/>
+                        <outlet property="hotel" destination="DOI-3U-tf5" id="j2x-8Z-O4a"/>
+                        <outlet property="humidity" destination="Z4v-XO-O1a" id="Qa0-o6-3VY"/>
+                        <outlet property="internetSpeed" destination="FLv-Y8-5HE" id="42k-lI-wzR"/>
+                        <outlet property="priceForLocals" destination="8FT-s0-fsr" id="1gI-MR-ESg"/>
+                        <outlet property="priceLongTerm" destination="JYS-Iy-Uay" id="dyb-UV-9Iw"/>
+                        <outlet property="priceShortTerm" destination="35R-DJ-woj" id="biS-XV-2iM"/>
+                        <outlet property="region" destination="4ul-uh-Kmv" id="7ha-g1-VC0"/>
+                        <outlet property="softDrinks" destination="IdS-HW-L2O" id="EWq-F7-gfS"/>
+                        <outlet property="temperature" destination="444-Rz-GVX" id="M9D-Qc-QAh"/>
+                        <outlet property="weather" destination="8ii-2f-hPq" id="02p-Ur-CEW"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nM3-Fd-bia" userLabel="First Responder" sceneMemberID="firstResponder"/>

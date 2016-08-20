@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LivingCost/CityTableViewController.swift"
-            timestampString = "493417791.093555"
+            timestampString = "493423599.433502"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "updateUI()"
             landmarkType = "5">
          </BreakpointContent>
